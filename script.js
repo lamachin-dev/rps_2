@@ -49,21 +49,27 @@ const buttons = document.querySelectorAll("button")
 buttons.forEach((button)=> 
   button.addEventListener("click", (e)=>{
     const rpsButton = e.target.className
-    playRound(rpsButton)
+    const winner = playRound(rpsButton)
     console.log(`Round(${round})`);
     //Increase score
-    if(playRound(rpsButton) === "player"){playerScore++}
-    else if(playRound(rpsButton) === "computer") {computerScore++};
-    
+    if(winner === "player"){playerScore++}
+    else if(winner === "computer") {computerScore++};
     round++;
-    console.log(`Result - Player:${playerScore} Computer:${computerScore}`);
+    
+    updateDisplay(playerScore, computerScore, round)
   })  
 )
 
 //Display score
 //Display choices
 //Display results
+const updateDisplay = function(playerScore, computerScore, round, ){
+    const score = document.querySelector(".score");
+    const choice = document.querySelector(".choice");
+    const result = document.querySelector(".result");
 
+    score.textContent = `Round ${round} - Player: ${playerScore}, Computer: ${computerScore}`
+}
         
 }
 
