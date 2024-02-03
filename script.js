@@ -9,12 +9,25 @@ const getComputerChoice = function(){
     return computerChoice;
 }
 
+const updateUIScore = function(playerScore, computerScore, round, computerChoice, playerChoice  ){
+    const score = document.querySelector(".score");
+    const choice = document.querySelector(".choice");
+    const result = document.querySelector(".result");
+    score.textContent = `Round ${round} - Player: ${playerScore}, Computer: ${computerScore}`
+}
+
+const updateUIChoices = function(computerChoice, playerChoice){
+    const choice = document.querySelector(".choice");
+    choice.textContent = `Computer choice ${computerChoice}, Player choice ${playerChoice}`
+}
+
 
 const playRound = function(rpsButton){
     const playerSelection = rpsButton
     const computerSelection = getComputerChoice()
-    console.log("player:", playerSelection," vs ", "pc:", computerSelection);
-
+    // console.log("player:", playerSelection," vs ", "pc:", computerSelection);
+    // updateDisplay(undefined,undefined,undefined,computerSelection,playerSelection)   
+s    updateUIChoices(computerSelection, playerSelection)
     let winner ="";    
     //ties
     if(playerSelection === computerSelection){
@@ -56,20 +69,18 @@ buttons.forEach((button)=>
     else if(winner === "computer") {computerScore++};
     round++;
     
-    updateDisplay(playerScore, computerScore, round)
+    updateUIScore(playerScore, computerScore, round)
   })  
+
+  //TODO: End game at round 5
+  //TODO: display choices in UI
+  //TODO: display winner result in UI
 )
 
 //Display score
 //Display choices
 //Display results
-const updateDisplay = function(playerScore, computerScore, round, ){
-    const score = document.querySelector(".score");
-    const choice = document.querySelector(".choice");
-    const result = document.querySelector(".result");
 
-    score.textContent = `Round ${round} - Player: ${playerScore}, Computer: ${computerScore}`
-}
         
 }
 
