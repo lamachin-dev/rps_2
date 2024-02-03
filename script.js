@@ -11,8 +11,6 @@ const getComputerChoice = function(){
 
 const updateUIScore = function(playerScore, computerScore, round, computerChoice, playerChoice  ){
     const score = document.querySelector(".score");
-    const choice = document.querySelector(".choice");
-    const result = document.querySelector(".result");
     score.textContent = `Round ${round} - Player: ${playerScore}, Computer: ${computerScore}`
 }
 
@@ -27,7 +25,7 @@ const playRound = function(rpsButton){
     const computerSelection = getComputerChoice()
     // console.log("player:", playerSelection," vs ", "pc:", computerSelection);
     // updateDisplay(undefined,undefined,undefined,computerSelection,playerSelection)   
-s    updateUIChoices(computerSelection, playerSelection)
+    updateUIChoices(computerSelection, playerSelection)
     let winner ="";    
     //ties
     if(playerSelection === computerSelection){
@@ -73,13 +71,8 @@ buttons.forEach((button)=>
   })  
 
   //TODO: End game at round 5
-  //TODO: display choices in UI
-  //TODO: display winner result in UI
 )
 
-//Display score
-//Display choices
-//Display results
 
         
 }
