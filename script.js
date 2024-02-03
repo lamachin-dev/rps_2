@@ -10,8 +10,8 @@ const getComputerChoice = function(){
 }
 
 
-const playRound = function(){
-    const playerSelection = prompt("type your choice:").toLowerCase()
+const playRound = function(rpsButton){
+    const playerSelection = rpsButton
     const computerSelection = getComputerChoice()
     console.log("player:", playerSelection," vs ", "pc:", computerSelection);
 
@@ -44,16 +44,24 @@ const playGame = function(){
     let computerScore = 0;
     let round = 1;
 
-    for(let i = 0; i < 5; i++){
-        console.log(`Round(${round})`);
-        //Increase score
-        if(playRound() === "player"){playerScore++}
-        else if(playRound() === "computer") {computerScore++};
-        
-        round++;
-        console.log(`Result - Player:${playerScore} Computer:${computerScore}`);
-    }
+//Event listeners for 3 buttons, pass respective class to playRound()
+const buttons = document.querySelectorAll("button")
+buttons.forEach((button)=> 
+  button.addEventListener("click", (e)=>{
+    const rpsButton = e.target.className
+    playRound(rpsButton)
+    console.log(`Round(${round})`);
+    //Increase score
+    if(playRound(rpsButton) === "player"){playerScore++}
+    else if(playRound(rpsButton) === "computer") {computerScore++};
+    
+    round++;
+    console.log(`Result - Player:${playerScore} Computer:${computerScore}`);
 
+  })  
+)
+
+        
 }
 
 playGame()
