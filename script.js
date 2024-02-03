@@ -42,14 +42,16 @@ const playRound = function(){
 const playGame = function(){
     let playerScore = 0;
     let computerScore = 0;
-    let round = 0;
+    let round = 1;
 
     for(let i = 0; i < 5; i++){
+        console.log(`Round(${round})`);
         //Increase score
         if(playRound() === "player"){playerScore++}
-        else if(playRound() === "computer") {computerScore++}
+        else if(playRound() === "computer") {computerScore++};
+        
         round++;
-        console.log(`Round(${round}) - Player:${playerScore} Computer:${computerScore}`);
+        console.log(`Result - Player:${playerScore} Computer:${computerScore}`);
     }
 
 }
