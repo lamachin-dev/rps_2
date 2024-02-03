@@ -57,9 +57,12 @@ buttons.forEach((button)=>
     
     round++;
     console.log(`Result - Player:${playerScore} Computer:${computerScore}`);
-
   })  
 )
+
+//Display score
+//Display choices
+//Display results
 
         
 }
