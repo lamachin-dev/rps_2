@@ -55,20 +55,22 @@ const playGame = function(){
     let computerScore = 0;
     let round = 1;
 
-//Event listeners for 3 buttons, pass respective class to playRound()
-const buttons = document.querySelectorAll("button")
-buttons.forEach((button)=> 
+    //Event listeners for 3 buttons, pass respective class to playRound()
+
+    buttons.forEach((button)=> 
   button.addEventListener("click", (e)=>{
+if(round === 6) {return};
+
     const rpsButton = e.target.className
     const winner = playRound(rpsButton)
     console.log(`Round(${round})`);
     //Increase score
     if(winner === "player"){playerScore++}
     else if(winner === "computer") {computerScore++};
-    round++;
     
     updateUIScore(playerScore, computerScore, round)
-  })  
+    round++;
+  })
 
   //TODO: End game at round 5
 )
