@@ -56,6 +56,7 @@ const playGame = function(){
     let round = 1;
 
     //Event listeners for 3 buttons, pass respective class to playRound()
+    const buttons = document.querySelectorAll("button")
 
     buttons.forEach((button)=> 
   button.addEventListener("click", (e)=>{
